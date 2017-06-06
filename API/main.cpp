@@ -62,8 +62,10 @@ int main(void)
             luna_logger(luna::log_level::INFO, "Malformed dice expression.");
             return {400, nlohmann::json{ {"ok", false}, {"expression", req.matches[1]}, {"message", "Malformed dice expression."} }.dump() };
         }
-
     });
+
+    std::string path{std::getenv("STATIC_ASSET_PATH")};
+    server.serve_files("/", path);
 
     LOG(INFO) << "Server started on port " << std::to_string(server.get_port());
 
