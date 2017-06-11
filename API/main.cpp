@@ -9,6 +9,8 @@
 #include <easylogging++.h>
 INITIALIZE_EASYLOGGINGPP
 
+#include "html.h"
+
 void luna_logger(luna::log_level level, const std::string &message)
 {
     switch(level)
@@ -64,8 +66,20 @@ int main(void)
         }
     });
 
+
+    //ALl other endpoints return our custom HTML
+    server.handle_request(luna::request_method::GET, R"(.*)", [](auto &req) -> luna::response {
+//        return {luna::response::URI{"/index.html"}};
+       return {200, dice::index};
+    });
+
+
+
     std::string path{std::getenv("STATIC_ASSET_PATH")};
     server.serve_files("/", path);
+
+    //TODO custom 404!
+
 
     LOG(INFO) << "Server started on port " << std::to_string(server.get_port());
 

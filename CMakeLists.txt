@@ -28,7 +28,7 @@ chancypolyhedra_option(BUILD_CHANCYPOLYHEDRA_COVERAGE "Generate test coverage in
 chancypolyhedra_option(BUILD_CHANCYPOLYHEDRA_API "Build the API server"              OFF)
 message(STATUS "=======================================================")
 
-set(SOURCE_FILES chancypolyhedra/grammar.hpp chancypolyhedra/chancypolyhedra.cpp chancypolyhedra/chancypolyhedra.h)
+set(SOURCE_FILES chancypolyhedra/grammar.hpp chancypolyhedra/chancypolyhedra.cpp chancypolyhedra/chancypolyhedra.h chancypolyhedra/tokenizer.cpp chancypolyhedra/tokenizer.h)
 add_library(chancypolyhedra ${SOURCE_FILES})
 set(CHANCYPOLYHEDRA_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR} CACHE INTERNAL "")
 include_directories(SYSTEM ${CHANCYPOLYHEDRA_INCLUDE_DIRS})
