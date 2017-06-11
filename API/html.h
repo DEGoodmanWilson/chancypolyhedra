@@ -55,7 +55,7 @@ const std::string index{R"(
     $(document).ready(function () {
         $('#dice').on('click', function (e) {
 //            TODO this should not be a hard-coded domain
-            $.get("http://chancypolyhedra.now.sh/v1/" + $('#diceexpr').val(), function(data, status){
+            $.get("https://chancypolyhedra.now.sh/v1/" + $('#diceexpr').val(), function(data, status){
                 res = $.parseJSON(data);
                 $('#diceresult').text(res['result']);
             });
