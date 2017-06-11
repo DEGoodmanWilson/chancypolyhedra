@@ -74,8 +74,11 @@ int main(void)
     });
 
 
-
-    std::string path{std::getenv("STATIC_ASSET_PATH")};
+    std::string path{"/app/assets"};
+    if (auto asset_path_str = std::getenv("STATIC_ASSET_PATH"))
+    {
+        path = asset_path_str;
+    }
     server.serve_files("/", path);
 
     //TODO custom 404!

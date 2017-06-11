@@ -1,4 +1,4 @@
-FROM degoodmanwilson/cppbase-gcc54
+FROM degoodmanwilson/conan-luna
 
 MAINTAINER D.E. Goodman-Wilson
 
