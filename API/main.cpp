@@ -11,7 +11,7 @@ INITIALIZE_EASYLOGGINGPP
 
 #include "html.h"
 
-void luna_logger(luna::log_level level, const std::string &message)
+void error_logger(luna::log_level level, const std::string &message)
 {
     switch(level)
     {
@@ -33,11 +33,18 @@ void luna_logger(luna::log_level level, const std::string &message)
     }
 }
 
+void access_logger(const luna::request &request)
+{
+    LOG(INFO) << request.ip_address << ": " << luna::to_string(request.method) << " " << request.path << " "
+             << request.http_version << " " << request.headers.at("user-agent");
+}
+
 /****** ******/
 
 int main(void)
 {
-    luna::set_logger(luna_logger);
+    luna::set_access_logger(access_logger);
+    luna::set_error_logger(error_logger);
 
     uint16_t port = 8080;
     if (auto port_str = std::getenv("PORT"))
@@ -61,7 +68,7 @@ int main(void)
         }
         catch(std::runtime_error e)
         {
-            luna_logger(luna::log_level::INFO, "Malformed dice expression.");
+            error_logger(luna::log_level::INFO, "Malformed dice expression.");
             return {400, nlohmann::json{ {"ok", false}, {"expression", req.matches[1]}, {"message", "Malformed dice expression."} }.dump() };
         }
     });

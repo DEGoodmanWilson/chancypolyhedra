@@ -29,7 +29,7 @@ class ChanPolyConan(ConanFile):
                 del self.requires["gtest"]
 
         if self.options.build_chancypolyhedra_api:
-            self.requires.add("luna/2.11.0@DEGoodmanWilson/stable", private=False)
+            self.requires.add("luna/3.0.0@DEGoodmanWilson/stable", private=False)
             self.requires.add("easyloggingpp/9.80@memsharded/testing", private=False)
             self.requires.add("nl-json/2.1.1@genvidtech/1.4.0", private=False)
         else:
