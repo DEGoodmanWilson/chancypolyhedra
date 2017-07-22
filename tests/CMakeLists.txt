@@ -1,13 +1,17 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.5)
 
 enable_testing()
 
-add_executable(chancypolyhedra_tests
+add_executable(${PROJECT_NAME}_tests
         main.cpp
-        basic.cpp distributions.cpp)
+        chancypolyhedra_controller.cpp
+        env.hpp assets.cpp
+        ../chancypolyhedra/chancypolyhedra.cpp ../chancypolyhedra/chancypolyhedra.hpp
+        ../chancypolyhedra/grammar.hpp
+        ../chancypolyhedra/randutils.hpp
+        ../chancypolyhedra/tokenizer.cpp ../chancypolyhedra/tokenizer.hpp
+        )
 
-message(STATUS "CONAN_LIBS: ${CONAN_LIBS}")
+target_link_libraries(${PROJECT_NAME}_tests ${CONAN_LIBS})
 
-target_link_libraries(chancypolyhedra_tests chancypolyhedra ${CONAN_LIBS})
-
-add_test(chancypolyhedra ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/chancypolyhedra_tests)
+add_test(${PROJECT_NAME} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${PROJECT_NAME}_tests)

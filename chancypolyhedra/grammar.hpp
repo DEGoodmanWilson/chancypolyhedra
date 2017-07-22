@@ -6,7 +6,6 @@
 #include <iostream>
 #include <map>
 #include <vector>
-
 #include <tao/pegtl.hpp>
 
 // Include the analyze function that checks

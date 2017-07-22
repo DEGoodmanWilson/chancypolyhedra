@@ -8,11 +8,8 @@
 // Copyright © 2017 D.E. Goodman-Wilson
 //
 
-#pragma once
+#include <catch.hpp>
+#include <cpr/cpr.h>
+#include <json.hpp>
+#include "env.hpp"
 
-#include <string>
-#include <map>
-
-using token_list = std::map<std::string, std::string>;
-
-std::string replace(std::string source, token_list list);

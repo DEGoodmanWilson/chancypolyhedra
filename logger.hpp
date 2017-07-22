@@ -11,8 +11,10 @@
 #pragma once
 
 #include <string>
-#include <map>
+#include <luna/luna.h>
 
-using token_list = std::map<std::string, std::string>;
+void error_logger(luna::log_level level, const std::string &message);
 
-std::string replace(std::string source, token_list list);
+void access_logger(const luna::request &request, const luna::response &response);
+
+const std::string VERSION{"v1"};

@@ -8,11 +8,15 @@
 // Copyright © 2017 D.E. Goodman-Wilson
 //
 
+#include <string>
+#include <luna/luna.h>
+
 #pragma once
 
-#include <string>
-#include <map>
+struct controller
+{
+    luna::request_method method;
+    std::string path;
+    luna::server::endpoint_handler_cb handler;
+};
 
-using token_list = std::map<std::string, std::string>;
-
-std::string replace(std::string source, token_list list);
