@@ -54,7 +54,7 @@ int main()
     app::add_route("/v1", chancypolyhedra_controller);
 
     // Here is an endpoint for serving static files. Any request to "/foobar.html" will look in the folder "assets" for a file called "foobar.html"
-    app::add_route("/", "assets");
+    app::add_route("/", "frontend/dist");
 
     // yield to server
     app::await();
