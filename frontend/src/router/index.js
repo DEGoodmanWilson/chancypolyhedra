@@ -8,11 +8,18 @@
 // Copyright © 2017 D.E. Goodman-Wilson
 //
 
-#pragma once
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from '@/components/Home'
 
-#include <string>
-#include <map>
+Vue.use(Router)
 
-using token_list = std::map<std::string, std::string>;
-
-std::string replace(std::string source, token_list list);
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    }
+  ]
+})

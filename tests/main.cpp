@@ -1,27 +1,30 @@
+//    ________                           ____        __      __             __
+//   / ____/ /_  ____ _____  _______  __/ __ \____  / /_  __/ /_  ___  ____/ /________ _
+//  / /   / __ \/ __ `/ __ \/ ___/ / / / /_/ / __ \/ / / / / __ \/ _ \/ __  / ___/ __ `/
+// / /___/ / / / /_/ / / / / /__/ /_/ / ____/ /_/ / / /_/ / / / /  __/ /_/ / /  / /_/ /
+// \____/_/ /_/\__,_/_/ /_/\___/\__, /_/    \____/_/\__, /_/ /_/\___/\__,_/_/   \__,_/
+//                             /____/              /____/
 //
-// Created by Don Goodman-Wilson on 01/06/2017.
+// Copyright © 2017 D.E. Goodman-Wilson
 //
 
-#include <gtest/gtest.h>
+#define CATCH_CONFIG_RUNNER
+#include <catch.hpp>
 
-class Environment :
-        public ::testing::Environment
+std::string hostname{"http://localhost"};
+
+int main( int argc, char* argv[] )
 {
-public:
-    virtual void SetUp() override
+    if (auto port = std::getenv("PORT"))
     {
+        hostname = hostname + ":" + port;
+    }
+    else
+    {
+        hostname = hostname + ":8080";
     }
 
-    virtual void TearDown() override
-    {
-    }
-};
+    int result = Catch::Session().run( argc, argv );
 
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-
-    ::testing::AddGlobalTestEnvironment(new Environment());
-
-    return RUN_ALL_TESTS();
+    return ( result < 0xff ? result : 0xff );
 }

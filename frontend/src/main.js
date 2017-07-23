@@ -8,11 +8,21 @@
 // Copyright © 2017 D.E. Goodman-Wilson
 //
 
-#pragma once
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import vueBulmaComponents from 'vue-bulma-components'
 
-#include <string>
-#include <map>
+Vue.use(vueBulmaComponents)
 
-using token_list = std::map<std::string, std::string>;
+Vue.config.productionTip = false
 
-std::string replace(std::string source, token_list list);
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  template: '<App/>',
+  components: { App }
+})

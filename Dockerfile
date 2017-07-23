@@ -1,11 +1,17 @@
-FROM degoodmanwilson/conan-luna
+FROM degoodmanwilson/luna-node
 
 MAINTAINER D.E. Goodman-Wilson
 
-WORKDIR /app
-ADD . /app
-RUN conan install -s compiler=gcc -s compiler.version=5.4 -s compiler.libcxx=libstdc++11 --build=missing -o build_chancypolyhedra_tests=False -o build_chancypolyhedra_api=True
-RUN conan build 
 ENV PORT 80
 EXPOSE 80
-CMD ["/app/bin/chancypolyhedrad"]
+WORKDIR /app
+ADD . /app
+RUN conan --version
+RUN conan install --build=missing
+RUN cmake .
+RUN cmake --build .
+WORKDIR /app/frontend
+RUN npm install
+RUN npm run build
+WORKDIR /app
+CMD ["./bin/chancypolyhedra"]

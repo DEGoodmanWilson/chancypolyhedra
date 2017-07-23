@@ -8,11 +8,18 @@
 // Copyright © 2017 D.E. Goodman-Wilson
 //
 
+#include "controllers/controller.hpp"
+
 #pragma once
 
-#include <string>
-#include <map>
+namespace app
+{
 
-using token_list = std::map<std::string, std::string>;
+bool launch(int port);
 
-std::string replace(std::string source, token_list list);
+void add_route(std::string &&base, const controller& controller);
+void add_route(std::string &&base, std::string &&folder);
+
+void await();
+
+} // namespace app

@@ -10,9 +10,4 @@
 
 #pragma once
 
-#include <string>
-#include <map>
-
-using token_list = std::map<std::string, std::string>;
-
-std::string replace(std::string source, token_list list);
+extern std::string hostname;

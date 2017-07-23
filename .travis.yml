@@ -1,0 +1,17 @@
+sudo: required
+
+# not really, hahaha! But we still rely on Node for building and testing the frontend
+language: node_js
+node_js:
+  - "7"
+
+services:
+  - docker
+
+before_install:
+  - docker build -t chancypolyhedra .
+  - docker run -d chancypolyhedra
+  - docker ps -a
+
+script:
+  - docker exec $(docker ps -lq) /bin/sh -c "/app/bin/chancypolyhedra_tests"
