@@ -38,5 +38,6 @@ void error_logger(luna::log_level level, const std::string &message)
 void access_logger(const luna::request &request, const luna::response &response)
 {
     std::cout << request.ip_address << ": " << luna::to_string(request.method) << " [" << response.status_code << "] "
-              << request.path << " " << request.http_version << " " << request.headers.at("user-agent") << std::endl;
+              << request.path << " " << request.http_version << " " << request.headers.at("user-agent") << " { "
+              << std::chrono::duration_cast<std::chrono::microseconds>(request.end - request.start).count() << "us } " << std::endl;
 }

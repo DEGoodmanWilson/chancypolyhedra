@@ -14,6 +14,7 @@
   <columns is-mobile>
     <column is-half is-offset-one-quarter>
       <img src="../assets/ChancyPolyhedra.png" v-bind:srcset="`${logos.small} 1x, ${logos.big} 2x`">
+      <h2 class="has-text-centered">Roll 2d6 for awesomeness.</h2>
       <div class="field has-addons">
         <div class="control is-expanded">
           <input class="input" id="dice" type="text" placeholder="2d6" v-on:keyup.13="roll">
@@ -65,8 +66,18 @@
 </script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
   .field {
     padding: 1em;
     background-color: ghostwhite;
+  }
+
+  h2 {
+    font-family: Playfair;
+    font-size: 50px;
+    font-stretch: ultra-condensed;
+    color: #ddd;
+    margin-bottom: 1em;
   }
 </style>
