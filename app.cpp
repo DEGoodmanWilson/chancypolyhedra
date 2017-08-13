@@ -38,10 +38,19 @@ bool launch(int port)
     // Add security headers
     server->add_global_header("Strict-Transport-Security", "max-age=31536000");
     server->add_global_header("X-XSS-Protection", "1");
-    server->add_global_header("Content-Security-Policy", "default-src 'self'");
+    server->add_global_header("X-Frame-Options", "DENY");
+    server->add_global_header("X-Content-Type-Options", "nosniff");
+    server->add_global_header("Content-Security-Policy", "style-src https://fonts.google-apis.com https://fonts.googleapis.com 'self'; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-eval'; default-src 'self'; report-uri http://localhost:8080/csp");
+
+    server->handle_request(luna::request_method::POST, "/csp", [](const luna::request &request) -> luna::response
+    {
+        std::cout << request.body << std::endl;
+        return {200};
+    });
 
     return true;
 }
+
 
 void add_route(std::string &&base, const controller& controller)
 {

@@ -19,5 +19,7 @@ TEST_CASE("webserver headers")
     REQUIRE(result.status_code == 200);
     REQUIRE(result.header.at("Strict-Transport-Security") == "max-age=31536000");
     REQUIRE(result.header.at("X-XSS-Protection") == "1");
-    REQUIRE(result.header.at("Content-Security-Policy") == "default-src 'self'");
+    REQUIRE(result.header.count("Content-Security-Policy") >= 0);
+    REQUIRE(result.header.at("X-Frame-Options") == "DENY");
+    REQUIRE(result.header.at("X-Content-Type-Options") == "nosniff");
 }
