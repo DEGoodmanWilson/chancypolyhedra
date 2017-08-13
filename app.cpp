@@ -35,6 +35,11 @@ bool launch(int port)
         return false;
     }
 
+    // Add security headers
+    server->add_global_header("Strict-Transport-Security", "max-age=31536000");
+    server->add_global_header("X-XSS-Protection", "1");
+    server->add_global_header("Content-Security-Policy", "default-src 'self'");
+
     return true;
 }
 

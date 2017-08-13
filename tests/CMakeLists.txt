@@ -10,7 +10,7 @@ add_executable(${PROJECT_NAME}_tests
         ../chancypolyhedra/grammar.hpp
         ../chancypolyhedra/randutils.hpp
         ../chancypolyhedra/tokenizer.cpp ../chancypolyhedra/tokenizer.hpp
-        )
+        webserver.cpp)
 
 target_link_libraries(${PROJECT_NAME}_tests ${CONAN_LIBS})
 

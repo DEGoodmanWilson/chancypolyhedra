@@ -67,12 +67,12 @@ set(CONAN_SHARED_LINKER_FLAGS_CPR_LIST "")
 set(CONAN_EXE_LINKER_FLAGS_CPR_LIST "")
 
 
-set(CONAN_LUNA_ROOT "/Users/dgoodman/.conan/data/luna/3.1.1/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34")
-set(CONAN_INCLUDE_DIRS_LUNA "/Users/dgoodman/.conan/data/luna/3.1.1/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/include")
-set(CONAN_LIB_DIRS_LUNA "/Users/dgoodman/.conan/data/luna/3.1.1/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/lib")
-set(CONAN_BIN_DIRS_LUNA "/Users/dgoodman/.conan/data/luna/3.1.1/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/bin")
-set(CONAN_RES_DIRS_LUNA "/Users/dgoodman/.conan/data/luna/3.1.1/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/res")
-set(CONAN_BUILD_DIRS_LUNA "/Users/dgoodman/.conan/data/luna/3.1.1/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/")
+set(CONAN_LUNA_ROOT "/Users/dgoodman/.conan/data/luna/3.2.0/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34")
+set(CONAN_INCLUDE_DIRS_LUNA "/Users/dgoodman/.conan/data/luna/3.2.0/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/include")
+set(CONAN_LIB_DIRS_LUNA "/Users/dgoodman/.conan/data/luna/3.2.0/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/lib")
+set(CONAN_BIN_DIRS_LUNA "/Users/dgoodman/.conan/data/luna/3.2.0/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/bin")
+set(CONAN_RES_DIRS_LUNA "/Users/dgoodman/.conan/data/luna/3.2.0/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/res")
+set(CONAN_BUILD_DIRS_LUNA "/Users/dgoodman/.conan/data/luna/3.2.0/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/")
 set(CONAN_LIBS_LUNA luna)
 set(CONAN_DEFINES_LUNA )
 # COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
@@ -383,7 +383,7 @@ set(CONAN_CMD_C_FLAGS ${CONAN_C_FLAGS})
 set(CONAN_INCLUDE_DIRS "/Users/dgoodman/.conan/data/Catch/1.9.3/uilianries/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"
 			"/Users/dgoodman/.conan/data/PEGTL/2.0.0/DEGoodmanWilson/testing/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"
 			"/Users/dgoodman/.conan/data/cpr/1.2.0/DEGoodmanWilson/stable/package/a5335c777fa6657d1a8fb1a15512c1892a4bbc7c/include"
-			"/Users/dgoodman/.conan/data/luna/3.1.1/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/include"
+			"/Users/dgoodman/.conan/data/luna/3.2.0/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/include"
 			"/Users/dgoodman/.conan/data/nl-json/2.1.1/genvidtech/1.4.0/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"
 			"/Users/dgoodman/.conan/data/base64/1.0.2/DEGoodmanWilson/stable/package/7586e5a72612387c5beb630c8ff07f1a397d08b6/include"
 			"/Users/dgoodman/.conan/data/libcurl/7.49.1/lasote/stable/package/0f7474d0a0daebaf9f2fff9db477cf06ae5f7ed1/include"
@@ -399,7 +399,7 @@ set(CONAN_INCLUDE_DIRS "/Users/dgoodman/.conan/data/Catch/1.9.3/uilianries/stabl
 set(CONAN_LIB_DIRS "/Users/dgoodman/.conan/data/Catch/1.9.3/uilianries/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/lib"
 			"/Users/dgoodman/.conan/data/PEGTL/2.0.0/DEGoodmanWilson/testing/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/lib"
 			"/Users/dgoodman/.conan/data/cpr/1.2.0/DEGoodmanWilson/stable/package/a5335c777fa6657d1a8fb1a15512c1892a4bbc7c/lib"
-			"/Users/dgoodman/.conan/data/luna/3.1.1/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/lib"
+			"/Users/dgoodman/.conan/data/luna/3.2.0/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/lib"
 			"/Users/dgoodman/.conan/data/nl-json/2.1.1/genvidtech/1.4.0/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/lib"
 			"/Users/dgoodman/.conan/data/base64/1.0.2/DEGoodmanWilson/stable/package/7586e5a72612387c5beb630c8ff07f1a397d08b6/lib"
 			"/Users/dgoodman/.conan/data/libcurl/7.49.1/lasote/stable/package/0f7474d0a0daebaf9f2fff9db477cf06ae5f7ed1/lib"
@@ -415,7 +415,7 @@ set(CONAN_LIB_DIRS "/Users/dgoodman/.conan/data/Catch/1.9.3/uilianries/stable/pa
 set(CONAN_BIN_DIRS "/Users/dgoodman/.conan/data/Catch/1.9.3/uilianries/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin"
 			"/Users/dgoodman/.conan/data/PEGTL/2.0.0/DEGoodmanWilson/testing/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin"
 			"/Users/dgoodman/.conan/data/cpr/1.2.0/DEGoodmanWilson/stable/package/a5335c777fa6657d1a8fb1a15512c1892a4bbc7c/bin"
-			"/Users/dgoodman/.conan/data/luna/3.1.1/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/bin"
+			"/Users/dgoodman/.conan/data/luna/3.2.0/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/bin"
 			"/Users/dgoodman/.conan/data/nl-json/2.1.1/genvidtech/1.4.0/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin"
 			"/Users/dgoodman/.conan/data/base64/1.0.2/DEGoodmanWilson/stable/package/7586e5a72612387c5beb630c8ff07f1a397d08b6/bin"
 			"/Users/dgoodman/.conan/data/libcurl/7.49.1/lasote/stable/package/0f7474d0a0daebaf9f2fff9db477cf06ae5f7ed1/bin"
@@ -431,7 +431,7 @@ set(CONAN_BIN_DIRS "/Users/dgoodman/.conan/data/Catch/1.9.3/uilianries/stable/pa
 set(CONAN_RES_DIRS "/Users/dgoodman/.conan/data/Catch/1.9.3/uilianries/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/res"
 			"/Users/dgoodman/.conan/data/PEGTL/2.0.0/DEGoodmanWilson/testing/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/res"
 			"/Users/dgoodman/.conan/data/cpr/1.2.0/DEGoodmanWilson/stable/package/a5335c777fa6657d1a8fb1a15512c1892a4bbc7c/res"
-			"/Users/dgoodman/.conan/data/luna/3.1.1/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/res"
+			"/Users/dgoodman/.conan/data/luna/3.2.0/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/res"
 			"/Users/dgoodman/.conan/data/nl-json/2.1.1/genvidtech/1.4.0/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/res"
 			"/Users/dgoodman/.conan/data/base64/1.0.2/DEGoodmanWilson/stable/package/7586e5a72612387c5beb630c8ff07f1a397d08b6/res"
 			"/Users/dgoodman/.conan/data/libcurl/7.49.1/lasote/stable/package/0f7474d0a0daebaf9f2fff9db477cf06ae5f7ed1/res"
@@ -449,7 +449,7 @@ set(CONAN_DEFINES -DCURL_STATICLIB=1 ${CONAN_DEFINES})
 set(CONAN_CMAKE_MODULE_PATH "/Users/dgoodman/.conan/data/Catch/1.9.3/uilianries/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
 			"/Users/dgoodman/.conan/data/PEGTL/2.0.0/DEGoodmanWilson/testing/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
 			"/Users/dgoodman/.conan/data/cpr/1.2.0/DEGoodmanWilson/stable/package/a5335c777fa6657d1a8fb1a15512c1892a4bbc7c/"
-			"/Users/dgoodman/.conan/data/luna/3.1.1/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/"
+			"/Users/dgoodman/.conan/data/luna/3.2.0/DEGoodmanWilson/stable/package/85a0c12dc6b7c393f878bbf9bc85bde4fb0fbc34/"
 			"/Users/dgoodman/.conan/data/nl-json/2.1.1/genvidtech/1.4.0/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
 			"/Users/dgoodman/.conan/data/base64/1.0.2/DEGoodmanWilson/stable/package/7586e5a72612387c5beb630c8ff07f1a397d08b6/"
 			"/Users/dgoodman/.conan/data/libcurl/7.49.1/lasote/stable/package/0f7474d0a0daebaf9f2fff9db477cf06ae5f7ed1/"
