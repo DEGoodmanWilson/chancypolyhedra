@@ -21,7 +21,11 @@ static std::unique_ptr<luna::server> server;
 
 bool launch(int port)
 {
-    server = std::make_unique<luna::server>(luna::server::port{port}, luna::server::use_thread_per_connection{true});
+    server = std::make_unique<luna::server>(
+            luna::server::port{port},
+            luna::server::connection_memory_limit{256 * 1024},
+            luna::server::connection_timeout{120}
+    );
 
     if(!server)
     {
