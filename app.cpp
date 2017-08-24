@@ -23,6 +23,8 @@ bool launch(int port)
 {
     server = std::make_unique<luna::server>(
             luna::server::port{port},
+            // TODO enable only for non-debug builds
+            luna::server::enable_internal_file_cache{true},
             luna::server::connection_memory_limit{256 * 1024},
             luna::server::connection_timeout{120}
     );
