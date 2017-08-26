@@ -1,5 +1,5 @@
 [requires]
-luna/3.3.0@DEGoodmanWilson/testing
+luna/3.3.0@DEGoodmanWilson/stable
 nl-json/2.1.1@genvidtech/1.4.0
 PEGTL/2.0.0@DEGoodmanWilson/testing
 
