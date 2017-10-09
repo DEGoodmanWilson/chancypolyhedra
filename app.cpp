@@ -41,13 +41,8 @@ bool launch(int port)
         return false;
     }
 
-    // Add security headers
-    server->add_global_header("Strict-Transport-Security", "max-age=31536000");
-    server->add_global_header("X-XSS-Protection", "1");
-    server->add_global_header("X-Frame-Options", "DENY");
-    server->add_global_header("X-Content-Type-Options", "nosniff");
-    server->add_global_header("Content-Security-Policy", "style-src https://fonts.google-apis.com https://fonts.googleapis.com 'self'; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-eval'; default-src 'self'");
-
+    // Access control header
+    server->add_global_header("Access-Control-Allow-Origin", "*");
     return true;
 }
 
