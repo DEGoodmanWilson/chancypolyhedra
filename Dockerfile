@@ -10,8 +10,4 @@ RUN conan --version
 RUN conan install --build=missing
 RUN cmake .
 RUN cmake --build .
-WORKDIR /app/frontend
-RUN npm install
-RUN npm run build
-WORKDIR /app
 CMD ["./bin/chancypolyhedra"]
