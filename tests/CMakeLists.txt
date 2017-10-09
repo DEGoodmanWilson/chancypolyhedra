@@ -5,7 +5,7 @@ enable_testing()
 add_executable(${PROJECT_NAME}_tests
         main.cpp
         chancypolyhedra_controller.cpp
-        env.hpp assets.cpp
+        env.hpp
         ../chancypolyhedra/chancypolyhedra.cpp ../chancypolyhedra/chancypolyhedra.hpp
         ../chancypolyhedra/grammar.hpp
         ../chancypolyhedra/randutils.hpp

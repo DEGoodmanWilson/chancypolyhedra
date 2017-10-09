@@ -53,13 +53,6 @@ int main()
     // Here is an endpoint handled by a controller class, in controllers/chancypolyhedra_controller.hpp
     app::add_route("/v1", chancypolyhedra_controller);
 
-    // Here is an endpoint for serving static assets not being managed by vue
-    app::add_route("/assets", "assets");
-
-
-    // Here is an endpoint for serving static files. Any request to "/foobar.html" will look in the folder "assets" for a file called "foobar.html"
-    app::add_route("/", "frontend/dist");
-
     // yield to server
     app::await();
 

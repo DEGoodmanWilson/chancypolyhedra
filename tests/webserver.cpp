@@ -13,13 +13,28 @@
 #include <json.hpp>
 #include "env.hpp"
 
-TEST_CASE("webserver headers")
+TEST_CASE("webserver basic functioning")
 {
     auto result = cpr::Get(cpr::Url{hostname + "/v1/1"});
     REQUIRE(result.status_code == 200);
-    REQUIRE(result.header.at("Strict-Transport-Security") == "max-age=31536000");
-    REQUIRE(result.header.at("X-XSS-Protection") == "1");
-    REQUIRE(result.header.count("Content-Security-Policy") >= 0);
-    REQUIRE(result.header.at("X-Frame-Options") == "DENY");
-    REQUIRE(result.header.at("X-Content-Type-Options") == "nosniff");
+    auto obj = nlohmann::json::parse(result.text);
+    REQUIRE(obj["ok"] == true);
+    REQUIRE(obj["expression"] == "1");
+    REQUIRE(obj["result"] == 1);
+}
+
+TEST_CASE("webserver basic failure")
+{
+    auto result = cpr::Get(cpr::Url{hostname + "/v1/a"});
+    REQUIRE(result.status_code == 400);
+    auto obj = nlohmann::json::parse(result.text);
+    REQUIRE(obj["ok"] == false);
+    REQUIRE(obj["expression"] == "a");
+    REQUIRE(obj["message"] == "Malformed dice expression.");
+}
+
+TEST_CASE("webserver 404")
+{
+    auto result = cpr::Get(cpr::Url{hostname + "/"});
+    REQUIRE(result.status_code == 404);
 }
