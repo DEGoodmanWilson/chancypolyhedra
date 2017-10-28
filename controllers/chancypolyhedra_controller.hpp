@@ -8,12 +8,12 @@
 // Copyright © 2017 D.E. Goodman-Wilson
 //
 
+#pragma once
+
 #include <luna/luna.h>
 #include <json.hpp>
 #include "../chancypolyhedra/chancypolyhedra.hpp"
 #include "controller.hpp"
-
-#pragma once
 
 controller chancypolyhedra_controller{
         luna::request_method::GET,

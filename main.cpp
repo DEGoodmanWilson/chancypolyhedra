@@ -12,7 +12,6 @@
 #include <luna/luna.h>
 #include <json.hpp>
 #include "logger.hpp"
-#include "app.hpp"
 #include "controllers/chancypolyhedra_controller.hpp"
 
 int main()
@@ -41,20 +40,24 @@ int main()
         }
     }
 
+
+    // add endpoints
+    luna::router api;
+
+    // Here is an endpoint handled by a controller class, in controllers/chancypolyhedra_controller.hpp
+    chancypolyhedra_controller.add(api);
+
     // launch server
-    auto ok = app::launch(port);
-    if(!ok)
+    luna::server server;
+
+    server.add_router(api);
+
+    if(!server.start(port))
     {
         return 1;
     }
 
-    // add endpoints
 
-    // Here is an endpoint handled by a controller class, in controllers/chancypolyhedra_controller.hpp
-    app::add_route("/v1", chancypolyhedra_controller);
-
-    // yield to server
-    app::await();
 
     return 0;
 }
