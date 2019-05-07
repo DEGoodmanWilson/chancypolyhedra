@@ -5,7 +5,6 @@ PEGTL/2.0.0@DEGoodmanWilson/testing
 
 # for testing
 cpr/1.2.0@DEGoodmanWilson/stable
-Catch/1.9.6@bincrafters/stable
 
 [generators]
 cmake
