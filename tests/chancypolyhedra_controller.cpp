@@ -8,9 +8,9 @@
 // Copyright © 2017 D.E. Goodman-Wilson
 //
 
-#include <catch.hpp>
+#include <catch2/catch.hpp>
 #include <cpr/cpr.h>
-#include <json.hpp>
+#include <nlohmann/json.hpp>
 #include "env.hpp"
 
 TEST_CASE("smoketest 1")

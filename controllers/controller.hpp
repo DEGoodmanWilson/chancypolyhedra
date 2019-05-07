@@ -8,15 +8,20 @@
 // Copyright © 2017 D.E. Goodman-Wilson
 //
 
+#pragma once
+
 #include <string>
 #include <luna/luna.h>
-
-#pragma once
 
 struct controller
 {
     luna::request_method method;
     std::string path;
-    luna::server::endpoint_handler_cb handler;
+    luna::router::endpoint_handler_cb handler;
+
+    void add(std::shared_ptr<luna::router> router)
+    {
+        router->handle_request(method, path, handler);
+    }
 };
 
