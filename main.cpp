@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <luna/luna.h>
-#include <json.hpp>
+#include <nlohmann/json.hpp>
 #include "logger.hpp"
 #include "controllers/chancypolyhedra_controller.hpp"
 
@@ -41,16 +41,15 @@ int main()
     }
 
 
+    // create server
+    luna::server server;
+
     // add endpoints
-    luna::router api;
+    auto api = server.create_router("/v1");
 
     // Here is an endpoint handled by a controller class, in controllers/chancypolyhedra_controller.hpp
     chancypolyhedra_controller.add(api);
 
-    // launch server
-    luna::server server;
-
-    server.add_router(api);
 
     if(!server.start(port))
     {

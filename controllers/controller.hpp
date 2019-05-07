@@ -19,9 +19,9 @@ struct controller
     std::string path;
     luna::router::endpoint_handler_cb handler;
 
-    void add(luna::router router)
+    void add(std::shared_ptr<luna::router> router)
     {
-        router.handle_request(method, path, handler);
+        router->handle_request(method, path, handler);
     }
 };
 
