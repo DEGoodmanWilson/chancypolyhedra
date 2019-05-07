@@ -8,7 +8,7 @@ WORKDIR /app
 ADD . /app
 RUN conan --version
 RUN conan remote add catch https://api.bintray.com/catchorg/catch2
-RUN conan install --build=missing
+RUN conan install . --build=missing
 RUN cmake .
 RUN cmake --build .
 CMD ["./bin/chancypolyhedra"]
